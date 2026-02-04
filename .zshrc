@@ -1,3 +1,7 @@
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats '%b '
+
 # ATUIN
 . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
@@ -8,8 +12,5 @@ bindkey '^[[1;5C' forward-word   # Ctrl+Right
 bindkey '^[[1;5D' backward-word  # Ctrl+Left
 
 # PROMPT
-# Show: [user@last/3/dirs]
-# %n = username
-# %~ = cwd (with ~ for $HOME)
-# ${(j:/:)${(s:/:)${...}[-3,-1]}} = join last 3 path segments with /
-PROMPT='[%n@%3~] %# '
+setopt PROMPT_SUBST
+PROMPT='[%n@%F{blue}%3~ %F{red}${vcs_info_msg_0_}%]%f# '
