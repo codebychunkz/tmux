@@ -1,5 +1,7 @@
-autoload -Uz vcs_info
-precmd() { vcs_info }
+autoload -Uz add-zsh-hook compinit
+add-zsh-hook precmd vcs_info
+compinit
+
 zstyle ':vcs_info:git:*' formats '%b '
 
 # ATUIN
