@@ -1,0 +1,6 @@
+# DOCKER
+alias docker="podman"
+alias docker-compose="podman-compose"
+
+# ETC
+alias ll="ls -tral"
