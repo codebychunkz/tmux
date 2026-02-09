@@ -1,6 +1,10 @@
-# tmux
+Run setup.sh
 
-Install tmux plugin manager
-https://github.com/tmux-plugins/tpm
+Post-install
+Add the following to .gitconfig
 
-Clone to ~/.tmux.conf
+
+~~~ini
+[include]
+    path = ~/.personal_git.conf
+~~~ 
