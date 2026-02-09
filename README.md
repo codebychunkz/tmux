@@ -1,4 +1,4 @@
-Run setup.sh
+Run setup_<env>.sh
 
 Post-install
 Add the following to .gitconfig
