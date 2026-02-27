@@ -1,5 +1,5 @@
 # REQUIRED
-sudo dnf install zsh alacritty tmux git
+sudo dnf install zsh alacritty tmux git git-delta
 
 #TMUX PACKAGE MANAGER
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
