@@ -41,10 +41,11 @@ set -g status-left "#[fg=colour220] #h"
 # RIGHT STATUS
 set -g status-right-length 100
 set -g status-right-style default
-set -g status-right "#[fg=colour39] #(sensors | awk '/Package/ {print $4}') \
-#[fg=colour220] #(mpstat | awk '/all/{printf \"%.1f%%%%\", $3}') \
-#[fg=colour39] #(free -m -h | awk '/Mem/{printf $3\"\/\"$2}') \
+set -g status-right "#[fg=colour39] #(osx-cpu-temp) \
+#[fg=colour220] #(top -l 2 -n 0 | awk '/CPU usage/{print $3}' | tail -1) \
+#[fg=colour39] #(vm_stat | awk '/Pages active/{a=$3} /Pages wired/{w=$4} END{printf \"%.1fG\",(a+w)*4096/1073741824}') \
 #[fg=colour220] #(date +\"%Y-%m-%d %H:%M\")"
 
 
+set-environment -g PATH "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 run '~/.tmux/plugins/tpm/tpm'
